@@ -6,9 +6,10 @@ Handles complaint creation, listing, confirmation, and status tracking with dupl
 import math
 import os
 from datetime import datetime
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from models import db, init_db, Ward, Authority, Complaint, StatusHistory
 from seed import seed_database
+from ai.classifier import classify_complaint
 
 
 # ============================================================================
@@ -215,6 +216,22 @@ def create_complaint():
             'result': 'possible_duplicate',
             'complaint': complaint_to_dict(duplicate)
         }), 200
+    
+    # Classify complaint using LLM
+    try:
+        classification = classify_complaint(description, category)
+        category = classification.get('issue_type', category)
+        severity = classification.get('severity', severity)
+        # Find authority by name from classification
+        classified_authority_name = classification.get('assigned_authority')
+        if classified_authority_name:
+            classified_authority = Authority.query.filter_by(name=classified_authority_name).first()
+            if classified_authority:
+                authority = classified_authority
+    except Exception as e:
+        # Fall back to original category/severity/authority if classification fails
+        pass
+    
     
     # Create new complaint
     new_complaint = Complaint(
@@ -440,7 +457,7 @@ def get_ward_stats(ward_id):
 # ============================================================================
 @app.route("/")
 def home():
-    return "NagarSeva API is running!"
+    return render_template('index.html')
 if __name__ == '__main__':
     with app.app_context():
         # Create database tables

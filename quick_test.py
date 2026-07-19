@@ -1,0 +1,13 @@
+import requests, json, sqlite3, time
+time.sleep(3)
+r = requests.post('http://localhost:5000/api/complaints', json={'description':'live wire hanging near school gate, sparking in the rain', 'category':'pothole', 'lat':30.2, 'lng':30.2, 'ward_id':1, 'photo':'https://example.com/test2.jpg'}, timeout=15)
+print(f'HTTP: {r.status_code}')
+c = r.json().get('complaint', {})
+print(f'Category: {c.get("category")}')
+print(f'Severity: {c.get("severity")}')
+conn = sqlite3.connect('complaints.db')
+cursor = conn.cursor()
+cursor.execute('SELECT name FROM authority WHERE id = ?', (c.get("authority_id"),))
+auth = cursor.fetchone()
+print(f'Authority: {auth[0] if auth else "N/A"}')
+conn.close()
