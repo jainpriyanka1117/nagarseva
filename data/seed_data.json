@@ -1,0 +1,36 @@
+{
+  "wards": [
+    { "ward_id": "W1", "name": "Andheri West" },
+    { "ward_id": "W2", "name": "Bandra East" },
+    { "ward_id": "W3", "name": "Dadar" }
+  ],
+  "authorities": [
+    { "authority_id": "A1", "name": "BMC Roads Department", "handles": ["pothole", "road_damage"] },
+    { "authority_id": "A2", "name": "BMC Electrical Department", "handles": ["streetlight", "exposed_wire"] },
+    { "authority_id": "A3", "name": "BMC Solid Waste Management", "handles": ["garbage", "illegal_dumping"] },
+    { "authority_id": "A4", "name": "BMC Storm Water Drainage", "handles": ["blocked_drain", "waterlogging"] },
+    { "authority_id": "A5", "name": "Local Police - Traffic & Safety", "handles": ["unsafe_area", "encroachment"] }
+  ],
+  "complaints": [
+    { "id": "C001", "category": "pothole", "severity": "routine", "lat": 19.1364, "lng": 72.8296, "ward_id": "W1", "description": "Large pothole near Andheri Station west exit", "status": "in_progress", "reported_days_ago": 6, "confirm_count": 4 },
+    { "id": "C002", "category": "pothole", "severity": "routine", "lat": 19.1367, "lng": 72.8300, "ward_id": "W1", "description": "Pothole widening after rain, same stretch as station exit", "status": "in_progress", "reported_days_ago": 5, "confirm_count": 3 },
+    { "id": "C003", "category": "streetlight", "severity": "routine", "lat": 19.1189, "lng": 72.8468, "ward_id": "W1", "description": "Streetlight not working near Lokhandwala market", "status": "pending", "reported_days_ago": 3, "confirm_count": 2 },
+    { "id": "C004", "category": "exposed_wire", "severity": "life_threatening", "lat": 19.1195, "lng": 72.8475, "ward_id": "W1", "description": "Live wire hanging low near bus stop, sparking in rain", "status": "pending", "reported_days_ago": 1, "confirm_count": 6 },
+    { "id": "C005", "category": "garbage", "severity": "routine", "lat": 19.0596, "lng": 72.8295, "ward_id": "W2", "description": "Overflowing bin outside Bandra East station", "status": "resolved", "reported_days_ago": 12, "confirm_count": 5 },
+    { "id": "C006", "category": "illegal_dumping", "severity": "routine", "lat": 19.0601, "lng": 72.8301, "ward_id": "W2", "description": "Construction debris dumped on footpath", "status": "pending", "reported_days_ago": 4, "confirm_count": 2 },
+    { "id": "C007", "category": "blocked_drain", "severity": "routine", "lat": 19.0555, "lng": 72.8402, "ward_id": "W2", "description": "Drain blocked, waterlogging every monsoon at this spot", "status": "in_progress", "reported_days_ago": 8, "confirm_count": 7 },
+    { "id": "C008", "category": "blocked_drain", "severity": "routine", "lat": 19.0558, "lng": 72.8406, "ward_id": "W2", "description": "Same drain issue, water entering shops", "status": "in_progress", "reported_days_ago": 7, "confirm_count": 3 },
+    { "id": "C009", "category": "unsafe_area", "severity": "routine", "lat": 19.0176, "lng": 72.8434, "ward_id": "W3", "description": "Poorly lit stretch near Dadar flyover, unsafe after 9pm", "status": "pending", "reported_days_ago": 2, "confirm_count": 8, "anonymous": true },
+    { "id": "C010", "category": "unsafe_area", "severity": "routine", "lat": 19.0180, "lng": 72.8438, "ward_id": "W3", "description": "Same stretch, no streetlights working, felt unsafe walking alone", "status": "pending", "reported_days_ago": 2, "confirm_count": 5, "anonymous": true },
+    { "id": "C011", "category": "encroachment", "severity": "routine", "lat": 19.0201, "lng": 72.8450, "ward_id": "W3", "description": "Footpath fully encroached by vendors, pedestrians forced onto road", "status": "pending", "reported_days_ago": 5, "confirm_count": 3 },
+    { "id": "C012", "category": "exposed_wire", "severity": "life_threatening", "lat": 19.0210, "lng": 72.8455, "ward_id": "W3", "description": "Open electrical box near school, wires visible", "status": "resolved", "reported_days_ago": 10, "confirm_count": 9 },
+    { "id": "C013", "category": "pothole", "severity": "routine", "lat": 19.0620, "lng": 72.8320, "ward_id": "W2", "description": "Deep pothole causing two-wheeler accidents", "status": "pending", "reported_days_ago": 3, "confirm_count": 6 },
+    { "id": "C014", "category": "streetlight", "severity": "routine", "lat": 19.1400, "lng": 72.8350, "ward_id": "W1", "description": "Entire lane dark, three streetlights out in a row", "status": "in_progress", "reported_days_ago": 9, "confirm_count": 4 },
+    { "id": "C015", "category": "garbage", "severity": "routine", "lat": 19.0230, "lng": 72.8470, "ward_id": "W3", "description": "Garbage not collected for a week near Dadar market", "status": "pending", "reported_days_ago": 4, "confirm_count": 3 },
+    { "id": "C016", "category": "waterlogging", "severity": "routine", "lat": 19.1150, "lng": 72.8440, "ward_id": "W1", "description": "Knee-deep water at this junction every heavy rain", "status": "in_progress", "reported_days_ago": 15, "confirm_count": 10 },
+    { "id": "C017", "category": "unsafe_area", "severity": "routine", "lat": 19.0570, "lng": 72.8330, "ward_id": "W2", "description": "Isolated lane, no lighting, reports of harassment", "status": "pending", "reported_days_ago": 6, "confirm_count": 4, "anonymous": true },
+    { "id": "C018", "category": "road_damage", "severity": "routine", "lat": 19.1300, "lng": 72.8250, "ward_id": "W1", "description": "Road surface completely broken after water pipeline work", "status": "pending", "reported_days_ago": 2, "confirm_count": 2 },
+    { "id": "C019", "category": "exposed_wire", "severity": "life_threatening", "lat": 19.0640, "lng": 72.8280, "ward_id": "W2", "description": "Transformer box open, wires exposed at ground level near park", "status": "pending", "reported_days_ago": 1, "confirm_count": 5 },
+    { "id": "C020", "category": "blocked_drain", "severity": "routine", "lat": 19.0190, "lng": 72.8460, "ward_id": "W3", "description": "Drain cover missing, open pit collecting waste", "status": "resolved", "reported_days_ago": 20, "confirm_count": 6 }
+  ]
+}
